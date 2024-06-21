@@ -1,0 +1,4 @@
+name: QuarkStorm
+version: '${project.version}'
+main: burn.quarkstorm.Main
+api-version: '1.20'
