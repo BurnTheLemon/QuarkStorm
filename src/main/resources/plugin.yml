@@ -2,3 +2,8 @@ name: QuarkStorm
 version: '${project.version}'
 main: burn.quarkstorm.Main
 api-version: '1.20'
+commands:
+  quark:
+    description: Displays a small particle trick
+    aliases:
+      - q
