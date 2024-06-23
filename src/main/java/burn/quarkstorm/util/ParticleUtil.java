@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class ParticleUtil {
 
-    // Define global set of valid particle effects
     private static final Set<String> VALID_EFFECTS = new HashSet<>();
     static {
         VALID_EFFECTS.add("ring");
@@ -25,12 +24,9 @@ public class ParticleUtil {
     }
 
     public void executeQuarkParticle(String particleEffect, Player player, double xOffset, double yOffset, double zOffset) {
-        // Convert particleEffect to lowercase for case-insensitive comparison
         particleEffect = particleEffect.toLowerCase();
 
-        // Check if particleEffect is in the set of valid effects
         if (VALID_EFFECTS.contains(particleEffect)) {
-            // Use a switch or if-else to handle each valid effect
             switch (particleEffect) {
                 case "ring":
                     generateRingParticle(player, xOffset, yOffset, zOffset);
@@ -51,7 +47,6 @@ public class ParticleUtil {
                     throw new RuntimeException("Invalid ParticleName, this should not have been reached.");
             }
         } else {
-            // Handle undefined particle effects
             player.sendRawMessage("Der angegebene effekt existiert nicht. Versuche einen von diesen: " + Arrays.stream(getValidEffects().toArray()).toList());
         }
     }
